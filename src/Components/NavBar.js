@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 function NavBar() {
   return (
     <>
-      <Navbar style={{ backgroundColor: 'purple' }} data-bs-theme="dark"> {/* Use a vibrant green color */}
+      <Navbar style={{ backgroundColor: 'teal' }} data-bs-theme="dark"> {/* Use a vibrant green color */}
         <Container>
           <Navbar.Brand href="/" style={{ color: '#FFFFFF',fontSize:'1.5rem' }}> {/* White color for brand text */}
             Expense Tracker
@@ -14,6 +14,9 @@ function NavBar() {
           <Nav className="me-auto">
             <Nav.Link href="/" className="custom-nav-link">Home</Nav.Link>
             <Nav.Link href="/about" className="custom-nav-link">About</Nav.Link>
+            <Nav.Link href="/expense" className="custom-nav-link">Add Expenses</Nav.Link>
+            <Nav.Link href="/budget" className="custom-nav-link">Set Budget</Nav.Link>
+            <Nav.Link href="/record" className="custom-nav-link">Expense Record</Nav.Link>
             <Nav.Link href="/signup" className="custom-nav-link">Sign Up</Nav.Link>
             <Nav.Link href="/login" className="custom-nav-link">Login</Nav.Link>
           </Nav>

@@ -1,108 +1,277 @@
-.App {
-  text-align: center;
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 91vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background-image {
+  background-image: url('https://img.freepik.com/premium-photo/directly-view-objects-white-background_1048944-14445484.jpg?w=900');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent overlay */
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+  text-align: center;
+  color: #fff;
+  opacity: 0; /* Initially hide the content */
+  animation: fadeIn 1s forwards; /* Fade in animation */
 }
 
-@keyframes App-logo-spin {
+.content h1 {
+  font-size: 3rem;
+  color:teal;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease; /* Add transition effect */
+}
+
+.content p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 600px;
+  line-height: 1.6;
+  transition: transform 0.5s ease; /* Add transition effect */
+  color:black;
+}
+
+.btn-get-started {
+  font-size:60px;
+  padding: 15px 35px;
+  border-radius: 25px;
+  background-color: teal !important;
+  border: none !important;
+  animation: fadeInUp 1s forwards; /* Fade in and move up animation */
+  width:30%;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-container {
+  padding: 50px 0;
+}
+
+.about-image img {
+  width: 100%;
+  height:600px;
+  border-radius: 20px;
+  padding:10px;
+  margin:10px;
+ 
+}
+
+.about-content {
+  padding: 0 50px;
+  line-height: 0.8px;
+  text-align: justify;
+}
+
+.content-title{
+  color:teal;
+}
+
+.content-wrapper {
+  animation: slideIn 1s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.content-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.content-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+.custom-navbar {
+  background-color: teal;
+}
+
+.custom-brand {
+  color: #fff;
+  font-size: 1.5rem;
 }
 
 .custom-nav-link {
-  color: #FFFFFF !important;
-  margin-left: 50px;
-  font-size: 1.5rem;  /* Increase font size */
-  font-weight:bold;
-  transition: color 0.3s ease, transform 0.3s ease;  /* Add transition for color and transform */
+  color: white !important;
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
 .custom-nav-link:hover {
-  color:cornsilk !important;
-  transform: scale(1.3);  /* Slightly increase size on hover */
-
+  color: deepskyblue !important;
+  text-decoration: none;
+  animation: bounce 0.5s ease; /* Add animation on hover */
 }
 
-/* Center the form container */
-.container {
-  max-width: 600px;
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
 }
 
-/* Form title styling */
+@media (max-width: 768px) {
+  .custom-navbar .navbar-collapse {
+    background-color: teal;
+  }
+
+  .custom-nav-link {
+    margin-bottom: 10px;
+  }
+
+  .custom-nav-link:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.sign-up-form {
+  transition: all 0.5s ease; /* Smooth transition for form elements */
+  margin-top: 700px;
+}
+
+.sign-up-form.submitted {
+  opacity: 0; /* Hide the form after submission */
+}
+
 .form-title {
-  color: #6a0dad; /* Vibrant purple color */
   text-align: center;
-  animation: fadeInDown 1s ease-out;
+  margin-bottom: 20px;
+  color:teal;
 }
 
-/* Align labels and inputs on the same line */
 .form-group {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-/* Adjust form labels */
-.form-group label {
-  flex: 1;
-  margin-right: 20px;
+.form-input {
+  transition: border-color 0.3s ease; /* Smooth transition for input border color */
+}
+
+.form-input:focus {
+  border-color:black;/* Change border color on input focus */
+}
+
+.submit-button {
+  width: 100%;
+  transition: all 0.3s ease; /* Smooth transition for button */
+  margin-top:20px;
+  background-color:teal !important;
+  border-radius:5px;
+  border:none !important;
+}
+
+.submit-button:hover {
+  background-color:rgb(160, 229, 229); /* Change button background color on hover */
+  border-color: rgb(160, 229, 229); /* Change button border color on hover */
+}
+.TealButton{
+  background-color: teal !important;
+  border:none !important;
+}
+
+
+.expense-form-container {
+  width:40%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-top:60px;
+}
+
+.expense-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px; 
+  color:teal;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
   font-weight: bold;
 }
+button{
+  color:white;
+  background-color: teal;
+}
+.login-form {
+  
+  width:40%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-top:60px;
+}
 
-/* Adjust form inputs */
+.form-title {
+  text-align: center;
+  color: #333;
+}
+
 .form-input {
-  flex: 2;
-  transition: transform 0.3s ease;
+  transition: border-color 0.3s ease; /* Smooth transition for input border color */
 }
 
-/* Button styling */
-.submit-button {
-  background-color: #6a0dad;
-  border: none;
-  padding: 10px;
-  font-size: 1.2rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Button hover effect */
-.submit-button:hover {
-  background-color:black;
-  transform: scale(1.05);
-}
-
-/* Input focus effect */
 .form-input:focus {
-  transform: scale(1.02);
-  border-color: #6a0dad;
-  box-shadow: 0 0 5px rgba(106, 13, 173, 0.5);
+  border-color: #007bff; /* Change border color on input focus */
 }
+
+
+
 
 

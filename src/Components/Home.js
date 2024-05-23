@@ -1,13 +1,21 @@
-import React from 'react'
+import React from 'react';
+import { Button } from 'react-bootstrap';
+
 
 function Home() {
-    console.log('Home page')
   return (
-    <div className='container'>
-      
-      <h1>Home Page</h1>
+    <div className='home-container'>
+      <div className="background-image">
+        <div className="overlay">
+          <div className="content">
+            <h1>Welcome to Your Expense Tracker</h1>
+            <p>Take control of your finances and manage <br></br>your expenses effectively!</p>
+            <Button className="btn-get-started">Get Started</Button>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
